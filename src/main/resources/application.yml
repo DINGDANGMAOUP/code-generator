@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;DatabaseName=YinLuDWQAS
+    username: sa
+    password: Dzh970102
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  application:
+    name: code-generator
+  freemarker:
+    cache: false
+    charset: utf-8
+    expose-request-attributes: true
+    expose-session-attributes: true
+    suffix: .ftl
+    template-loader-path: classpath:/static/template/
+  resources:
+    static-locations: classpath:/static/# 应用服务 WEB 访问端口
+mybatis-plus:
+  type-aliases-package: com.yinlu.code.generator.model
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    banner: false
